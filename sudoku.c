@@ -63,7 +63,7 @@ List* get_adj_nodes(Node* n){
 
    return adj_nodes;
 }
-}
+
 
 
 int is_final(Node* n){
