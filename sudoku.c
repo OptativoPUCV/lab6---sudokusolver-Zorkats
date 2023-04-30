@@ -50,8 +50,19 @@ int is_valid(Node* n){
 
 
 List* get_adj_nodes(Node* n){
-    List* list=createList();
-    return list;
+  List* adj_nodes=createList();
+  State* current_state=n->state;
+  List* available_actions=n->available_actions;
+
+   for(Node* node : available_actions){
+      char* action_name=node->action_name;
+      State* new_state=node->state;
+      Node* adj_node=createNode(new_state, action_name);
+      addToList(adj_nodes, adj_node);
+   }
+
+   return adj_nodes;
+}
 }
 
 

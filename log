@@ -2,3 +2,44 @@ Sun 30 Apr 2023 06:00:42 PM UTC:
  tests:  0|5
 total_score: 0/70
 0a51aec
+Sun 30 Apr 2023 06:28:39 PM UTC: 
+ sudoku.c | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:54:3: error: unknown type name ‘State’
+   54 |   State* current_state=n->state;
+      |   ^~~~~
+sudoku.c:54:25: error: ‘Node’ has no member named ‘state’
+   54 |   State* current_state=n->state;
+      |                         ^~
+sudoku.c:55:28: error: ‘Node’ has no member named ‘available_actions’
+   55 |   List* available_actions=n->available_actions;
+      |                            ^~
+sudoku.c:57:19: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘:’ token
+   57 |    for(Node* node : available_actions){
+      |                   ^
+sudoku.c:58:25: error: ‘node’ undeclared (first use in this function); did you mean ‘Node’?
+   58 |       char* action_name=node->action_name;
+      |                         ^~~~
+      |                         Node
+sudoku.c:58:25: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:59:7: error: unknown type name ‘State’
+   59 |       State* new_state=node->state;
+      |       ^~~~~
+sudoku.c:61:7: error: implicit declaration of function ‘addToList’ [-Werror=implicit-function-declaration]
+   61 |       addToList(adj_nodes, adj_node);
+      |       ^~~~~~~~~
+sudoku.c:55:9: error: unused variable ‘available_actions’ [-Werror=unused-variable]
+   55 |   List* available_actions=n->available_actions;
+      |         ^~~~~~~~~~~~~~~~~
+sudoku.c:54:10: error: unused variable ‘current_state’ [-Werror=unused-variable]
+   54 |   State* current_state=n->state;
+      |          ^~~~~~~~~~~~~
+sudoku.c: At top level:
+sudoku.c:66:1: error: expected identifier or ‘(’ before ‘}’ token
+   66 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+31d5377
