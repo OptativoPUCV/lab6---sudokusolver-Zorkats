@@ -80,3 +80,9 @@ sudoku.c:54:10: error: unused variable ‘current_state’ [-Werror=unused-varia
 cc1: all warnings being treated as errors
 Compilation failed
 6e3ba3d
+Thu 04 May 2023 10:40:14 PM UTC: 
+ sudoku.c | 24 +++++++++++++++---------
+ 1 file changed, 15 insertions(+), 9 deletions(-)
+ tests:  2|4
+total_score: 15/70
+2d2ee90
