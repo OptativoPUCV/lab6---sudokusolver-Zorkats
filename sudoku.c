@@ -122,11 +122,11 @@ Node* DFS(Node* initial, int* cont){
   push(pila,initial);
 
   while(is_empty(pila) != 1){
-    Node* first = top(pila);
+    Node* primero = top(pila);
     pop(pila);
 
-    if(is_final(first) == 1) return first;
-    List* lista = get_adj_nodes(first);
+    if(is_final(primero) == 1) return primero;
+    List* lista = get_adj_nodes(primero);
     
     Node* nodes = first(lista);
     while(nodes != NULL){
