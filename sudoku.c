@@ -44,7 +44,43 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+  int f[10];
+  int c[10];
+  int matriz[10];
 
+  for(int i = 0; i < 9; i++){
+    
+    for(int ceros = 0; ceros < 10; ceros++){
+      f[ceros] = 0;
+      c[ceros] = 0;
+      matriz[ceros] = 0;
+    }
+    
+    for(int k = 0; k < 9; k++){
+      
+      if(n->sudo[i][k] != 0){
+        if(f[n->sudo[i][k]] == 1) return 0;
+        else f[n->sudo[i][k]] = 1;
+      }
+
+      if(n->sudo[k][i] != 0){
+        if(c[n->sudo[k][i]] == 1) return 0;
+        else c[n->sudo[k][i]] = 1;
+      }
+      
+      int matrizI = 3*(i/3) + (k/3);
+      int matrizJ = 3*(i%3) + (k%3);
+
+      if(n->sudo[matrizI][matrizJ] != 0){
+        if(matriz[n->sudo[matrizI][matrizJ]] == 1) return 0;
+        else matriz[n->sudo[matrizI][matrizJ]] = 1;
+      } 
+      
+    }
+    
+  }
+  
+  return 1;
     return 1;
 }
 
